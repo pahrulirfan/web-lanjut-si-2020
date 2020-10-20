@@ -11,4 +11,8 @@ class Mahasiswa extends CI_Controller
 	{
 		// fungsi tambahan
 	}
+
+	function tambah_lagi(){
+		// tambah lagi nih
+	}
 }
