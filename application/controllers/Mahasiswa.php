@@ -9,7 +9,12 @@ class Mahasiswa extends CI_Controller
 		$data['nim'] = $url_nim;
 		$data['jurusan'] = $url_jur;
 
-		$this->load->view('mahasiswa/v_index', $data);
+		$this->load->view('mahasiswa/v_tugas', $data);
+	}
+
+	public function tugas()
+	{
+		$this->load->view('mahasiswa/v_tugas');
 	}
 
 	public function jurusan()
