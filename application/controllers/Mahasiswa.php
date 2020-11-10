@@ -9,6 +9,9 @@ class Mahasiswa extends CI_Controller
 		$data['nim'] = $url_nim;
 		$data['jurusan'] = $url_jur;
 
+		//select * from nama table
+		$data['tbl_mahasiswa'] = $this->db->get('mahasiswa')->result();
+
 		$this->load->view('mahasiswa/v_index', $data);
 	}
 
