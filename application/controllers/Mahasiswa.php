@@ -8,13 +8,15 @@ class Mahasiswa extends CI_Controller
 		$data['umur'] = '35';
 		$data['nim'] = $url_nim;
 		$data['jurusan'] = $url_jur;
-
 		$this->load->view('mahasiswa/v_tugas', $data);
 	}
 
 	public function tugas()
 	{
-		$this->load->view('mahasiswa/v_tugas');
+		//select * from nama table
+		$data['tbl_mahasiswa'] = $this->db->get('mahasiswa')->result();
+
+		$this->load->view('mahasiswa/v_index', $data);
 	}
 
 	public function jurusan()
