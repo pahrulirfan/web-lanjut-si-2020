@@ -8,18 +8,12 @@
 
 </head>
 <body>
-<!--<h2 class="alert alert-success">Data Mahasiswa</h2>-->
-<!--<p>Nama : --><?php //echo $nama; ?><!-- </p>-->
-<!--<p>Umur : --><?php //echo $umur; ?><!--</p>-->
-<!--<p>NIM : --><?php //echo $nim; ?><!--</p>-->
-<!--<p>Jurusan : --><?php //echo $jurusan; ?><!--</p>-->
-<!--<input type="submit" class="btn btn-success">-->
 	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2980b9">
 		<div class="container">
 			<a class="navbar-brand" href="#">Tugas</a>
 			<div class="navbar-nav mr-auto">
 				<a href="#" class="nav-link active">Home</a>
-				<a href="#" class="nav-link">Tambah data</a>
+				<a href="<?= site_url('mahasiswa/tambah') ?>" class="nav-link">Tambah data</a>
 			</div>
 			<div class="navbar-nav ml-auto">
 				<a href="#" class="nav-link">Nama user</a>
