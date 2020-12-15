@@ -32,4 +32,22 @@ class Mahasiswa extends CI_Controller
 	{
 		echo 'D3 Sistem Informasi';
 	}
+
+	public function tambah()
+	{
+		$this->load->view('mahasiswa/v_tambah');
+	}
+
+	public function simpan_data()
+	{
+		$data = [
+			'nim' => $this->input->post('nim'),
+			'nama' => $this->input->post('nama'),
+			'alamat' => $this->input->post('alamat'),
+		];
+
+		$this->m_mahasiswa->create($data);
+		redirect('mahasiswa/index','refresh');
+	}
+
 }
