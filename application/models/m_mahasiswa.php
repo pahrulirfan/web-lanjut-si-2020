@@ -20,4 +20,10 @@ class m_mahasiswa extends CI_Model
 		// delete from mahasiswa where nim = $input_nim
 		$this->db->delete($this->tabel, ['nim' => $input_nim]);
 	}
+
+	public function getWhere($input_nim)
+	{
+		// select * from mahasiswa where nim = $input_nim
+		return $this->db->get_where($this->tabel, ['nim' => $input_nim])->row_object();
+	}
 }

@@ -26,7 +26,7 @@
 	</div>
 	
 	<div class="container">
-		<table class="animate__animated animate__heartBeat table table-bordered table-sm">
+		<table class="table table-bordered table-sm">
 			<thead>
 				<tr>
 					<th class="text-center" width="15%">Nomor</th>
@@ -47,13 +47,11 @@
 					<td class="text-center">
 
 						<a href="<?=site_url('mahasiswa/hapus/' . $isi->nim )?>"
-						   onclick="return confirm('Bneran ni ?')"
+						   onclick="return confirm('Anda Yakin ?')"
 						   class="btn btn-danger btn-sm">Del</a>
 
-
-
-
-						<a href="" class="btn btn-info btn-sm">Edit</a>
+						<a href="<?=site_url('mahasiswa/edit/' . $isi->nim )?>"
+						   class="btn btn-info btn-sm">Edit</a>
 
 					</td>
 				</tr>

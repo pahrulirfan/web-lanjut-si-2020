@@ -47,7 +47,7 @@ class Mahasiswa extends CI_Controller
 		];
 
 		$this->m_mahasiswa->create($data);
-		redirect('mahasiswa/index','refresh');
+		redirect('mahasiswa/index', 'refresh');
 	}
 
 	public function hapus($input_nim)
@@ -55,5 +55,12 @@ class Mahasiswa extends CI_Controller
 //		echo $input_nim;
 		$this->m_mahasiswa->delete($input_nim);
 		redirect('mahasiswa/index');
+	}
+
+	public function edit($input_nim)
+	{
+		// ambil data dari nim input
+		$data['data_nim'] = $this->m_mahasiswa->getWhere($input_nim);
+		return $this->load->view('mahasiswa/v_edit', $data);
 	}
 }
