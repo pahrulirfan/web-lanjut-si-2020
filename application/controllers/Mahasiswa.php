@@ -16,7 +16,7 @@ class Mahasiswa extends CI_Controller
 		$data['jurusan'] = $url_jur;
 //		$data['tbl_mahasiswa'] = $this->db->get('mahasiswa')->result();
 
-		$data['tbl_mahasiswa'] = $this->m_mahasiswa->getAll();
+		$data['data_mahasiswa'] = $this->m_mahasiswa->getAll();
 		$this->load->view('mahasiswa/v_index', $data);
 	}
 
@@ -50,4 +50,10 @@ class Mahasiswa extends CI_Controller
 		redirect('mahasiswa/index','refresh');
 	}
 
+	public function hapus($input_nim)
+	{
+//		echo $input_nim;
+		$this->m_mahasiswa->delete($input_nim);
+		redirect('mahasiswa/index');
+	}
 }

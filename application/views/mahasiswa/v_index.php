@@ -3,8 +3,8 @@
 <head>
 	<title>Data Mahasiswa</title>
 
-	<link rel="stylesheet"
-	href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 </head>
 <body>
@@ -21,12 +21,12 @@
 		</div>
 	</nav>
 
-	<div class="alert alert-success text-center mt-3">
+	<div class="animate__animated animate__backInDown alert alert-success text-center mt-3">
 		Data Mahasiswa
 	</div>
 	
 	<div class="container">
-		<table class="table table-bordered table-sm">
+		<table class="animate__animated animate__heartBeat table table-bordered table-sm">
 			<thead>
 				<tr>
 					<th class="text-center" width="15%">Nomor</th>
@@ -38,15 +38,23 @@
 			</thead>
 			<tbody>
 				<?php $no = 1; ?>
-				<?php foreach ($tbl_mahasiswa as $key) { ?>
+				<?php foreach ($data_mahasiswa as $isi) { ?>
 				<tr>
 					<td class="text-center"><?= $no++ ?></td>
-					<td><?= $key->nim ?></td>
-					<td><?= $key->nama ?></td>
-					<td><?= $key->alamat ?></td>
+					<td><?= $isi->nim ?></td>
+					<td><?= $isi->nama ?></td>
+					<td><?= $isi->alamat ?></td>
 					<td class="text-center">
+
+						<a href="<?=site_url('mahasiswa/hapus/' . $isi->nim )?>"
+						   onclick="return confirm('Bneran ni ?')"
+						   class="btn btn-danger btn-sm">Del</a>
+
+
+
+
 						<a href="" class="btn btn-info btn-sm">Edit</a>
-						<a href="" class="btn btn-danger btn-sm">Hapus</a>
+
 					</td>
 				</tr>
 				<?php } ?>

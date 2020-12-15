@@ -14,4 +14,10 @@ class m_mahasiswa extends CI_Model
 	{
 		return $this->db->insert($this->tabel, $object);
 	}
+
+	public function delete($input_nim)
+	{
+		// delete from mahasiswa where nim = $input_nim
+		$this->db->delete($this->tabel, ['nim' => $input_nim]);
+	}
 }
