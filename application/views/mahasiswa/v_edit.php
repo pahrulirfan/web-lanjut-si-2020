@@ -39,9 +39,7 @@
 				</div>
 				<div class="form-group">
 					<label>Alamat</label>
-					<textarea class="form-control" name="alamat">
-						<?= $data_nim->alamat ?>
-					</textarea>
+					<textarea class="form-control" name="alamat"><?= $data_nim->alamat ?></textarea>
 				</div>
 				<div class="form-group">
 					<button type="submit" name="submit" class="btn btn-primary">

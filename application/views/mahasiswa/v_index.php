@@ -2,63 +2,70 @@
 <html lang="en">
 <head>
 	<title>Data Mahasiswa</title>
-
 	<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2980b9">
-		<div class="container">
-			<a class="navbar-brand" href="#">Tugas</a>
-			<div class="navbar-nav mr-auto">
-				<a href="#" class="nav-link active">Home</a>
-				<a href="<?= site_url('mahasiswa/tambah') ?>" class="nav-link">Tambah data</a>
-			</div>
-			<div class="navbar-nav ml-auto">
-				<a href="#" class="nav-link">Nama user</a>
-			</div>
-		</div>
-	</nav>
-
-	<div class="animate__animated animate__backInDown alert alert-success text-center mt-3">
-		Data Mahasiswa
-	</div>
-	
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2980b9">
 	<div class="container">
-		<table class="table table-bordered table-sm">
-			<thead>
-				<tr>
-					<th class="text-center" width="15%">Nomor</th>
-					<th>Nim</th>
-					<th>Nama</th>
-					<th>Alamat</th>
-					<th class="text-center" width="15%">Aksi</th>
-				</tr>
-			</thead>
-			<tbody>
-				<?php $no = 1; ?>
-				<?php foreach ($data_mahasiswa as $isi) { ?>
-				<tr>
-					<td class="text-center"><?= $no++ ?></td>
-					<td><?= $isi->nim ?></td>
-					<td><?= $isi->nama ?></td>
-					<td><?= $isi->alamat ?></td>
-					<td class="text-center">
-
-						<a href="<?=site_url('mahasiswa/hapus/' . $isi->nim )?>"
-						   onclick="return confirm('Anda Yakin ?')"
-						   class="btn btn-danger btn-sm">Del</a>
-
-						<a href="<?=site_url('mahasiswa/edit/' . $isi->nim )?>"
-						   class="btn btn-info btn-sm">Edit</a>
-
-					</td>
-				</tr>
-				<?php } ?>
-				
-			</tbody>
-		</table>
+		<a class="navbar-brand" href="#">Tugas</a>
+		<div class="navbar-nav mr-auto">
+			<a href="<?= site_url('mahasiswa/index') ?>" class="nav-link active">Home</a>
+			<a href="<?= site_url('mahasiswa/tambah') ?>" class="nav-link">Tambah data</a>
+		</div>
+		<div class="navbar-nav ml-auto">
+			<a href="#" class="nav-link">Nama user</a>
+		</div>
 	</div>
+</nav>
+
+<div class="animate__animated animate__backInDown alert alert-success text-center mt-3">
+	Data Mahasiswa
+</div>
+
+<div class="container">
+	<table class="table table-bordered table-sm" id="myTable">
+		<thead>
+		<tr>
+			<th class="text-center" width="15%">Nomor</th>
+			<th>Nim</th>
+			<th>Nama</th>
+			<th>Alamat</th>
+			<th class="text-center" width="15%">Aksi</th>
+		</tr>
+		</thead>
+		<tbody>
+		<?php $no = 1; ?>
+		<?php foreach ($data_mahasiswa as $isi) { ?>
+			<tr>
+				<td class="text-center"><?= $no++ ?></td>
+				<td><?= $isi->nim ?></td>
+				<td><?= $isi->nama ?></td>
+				<td><?= $isi->alamat ?></td>
+				<td class="text-center">
+
+					<a href="<?= site_url('mahasiswa/hapus/' . $isi->nim) ?>"
+					   onclick="return confirm('Anda Yakin ?')"
+					   class="btn btn-danger btn-sm">Del</a>
+
+					<a href="<?= site_url('mahasiswa/edit/' . $isi->nim) ?>"
+					   class="btn btn-info btn-sm">Edit</a>
+
+				</td>
+			</tr>
+		<?php } ?>
+
+		</tbody>
+	</table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
+<script>
+	$(document).ready(function () {
+		$('.table').DataTable();
+	});
+</script>
 </body>
 </html>

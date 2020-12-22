@@ -63,4 +63,15 @@ class Mahasiswa extends CI_Controller
 		$data['data_nim'] = $this->m_mahasiswa->getWhere($input_nim);
 		return $this->load->view('mahasiswa/v_edit', $data);
 	}
+
+	public function simpan_edit()
+	{
+		$where = $this->input->post('nim');
+		$data = [
+			'nama' => $this->input->post('nama'),
+			'alamat' => $this->input->post('alamat'),
+		];
+		$this->m_mahasiswa->update($where, $data);
+		redirect('mahasiswa/index');
+	}
 }
