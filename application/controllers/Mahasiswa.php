@@ -10,13 +10,15 @@ class Mahasiswa extends CI_Controller
 
 	public function index($url_nim = '', $url_jur = '')
 	{
-		$data['nama'] = 'Andrian';
-		$data['umur'] = '35';
-		$data['nim'] = $url_nim;
-		$data['jurusan'] = $url_jur;
+//		$data['nama'] = 'Andrian';
+//		$data['umur'] = '35';
+//		$data['nim'] = $url_nim;
+//		$data['jurusan'] = $url_jur;
 //		$data['tbl_mahasiswa'] = $this->db->get('mahasiswa')->result();
 
 		$data['data_mahasiswa'] = $this->m_mahasiswa->getAll();
+
+		$this->load->view('template/header');
 		$this->load->view('mahasiswa/v_index', $data);
 	}
 
@@ -35,6 +37,7 @@ class Mahasiswa extends CI_Controller
 
 	public function tambah()
 	{
+		$this->load->view('template/header');
 		$this->load->view('mahasiswa/v_tambah');
 	}
 
@@ -61,7 +64,8 @@ class Mahasiswa extends CI_Controller
 	{
 		// ambil data dari nim input
 		$data['data_nim'] = $this->m_mahasiswa->getWhere($input_nim);
-		return $this->load->view('mahasiswa/v_edit', $data);
+		$this->load->view('template/header');
+		$this->load->view('mahasiswa/v_edit', $data);
 	}
 
 	public function simpan_edit()

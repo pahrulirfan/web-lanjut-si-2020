@@ -8,6 +8,11 @@ class Welcome extends CI_Controller {
 		$this->load->view('welcome_message');
 	}
 
+	public function uts()
+	{
+		$this->load->view('uts');
+	}
+
 	public function coba()
 	{
 		echo 'Hasil coba coba';

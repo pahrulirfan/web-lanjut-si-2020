@@ -1,25 +1,3 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<title>Data Mahasiswa</title>
-
-	<link rel="stylesheet"
-		  href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
-
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2980b9">
-	<div class="container">
-		<a class="navbar-brand" href="#">Tugas</a>
-		<div class="navbar-nav mr-auto">
-			<a href="#" class="nav-link active">Home</a>
-			<a href="#" class="nav-link">Tambah data</a>
-		</div>
-		<div class="navbar-nav ml-auto">
-			<a href="#" class="nav-link">Nama user</a>
-		</div>
-	</div>
-</nav>
 
 <div class="alert alert-success text-center mt-3">
 	Edit Data Mahasiswa

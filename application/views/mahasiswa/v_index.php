@@ -1,26 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-	<title>Data Mahasiswa</title>
-	<link rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css">
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #2980b9">
-	<div class="container">
-		<a class="navbar-brand" href="#">Tugas</a>
-		<div class="navbar-nav mr-auto">
-			<a href="<?= site_url('mahasiswa/index') ?>" class="nav-link active">Home</a>
-			<a href="<?= site_url('mahasiswa/tambah') ?>" class="nav-link">Tambah data</a>
-		</div>
-		<div class="navbar-nav ml-auto">
-			<a href="#" class="nav-link">Nama user</a>
-		</div>
-	</div>
-</nav>
-
-<div class="animate__animated animate__backInDown alert alert-success text-center mt-3">
+<div class="alert alert-success text-center mt-3 animate__animated animate__backInDown ">
 	Data Mahasiswa
 </div>
 
@@ -60,7 +38,7 @@
 	</table>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js"></script>
 <script>
 	$(document).ready(function () {
