@@ -13,4 +13,9 @@ class m_pengguna extends CI_Model
 		$this->db->where('password', $input_password);
 		return $this->db->get($this->table);
 	}
+
+	public function getAll()
+	{
+
+	}
 }
