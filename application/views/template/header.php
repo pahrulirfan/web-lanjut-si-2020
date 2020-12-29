@@ -13,9 +13,10 @@
 		<div class="navbar-nav mr-auto">
 			<a href="<?= site_url('mahasiswa/index') ?>" class="nav-link active">Home</a>
 			<a href="<?= site_url('mahasiswa/tambah') ?>" class="nav-link">Tambah data</a>
+			<a href="<?= site_url('login/logout') ?>" class="nav-link">Logout</a>
 		</div>
 		<div class="navbar-nav ml-auto">
-			<a href="#" class="nav-link">Nama user</a>
+			<a href="#" class="nav-link"><?php echo $this->session->userdata('nama_pengguna'); ?></a>
 		</div>
 	</div>
 </nav>

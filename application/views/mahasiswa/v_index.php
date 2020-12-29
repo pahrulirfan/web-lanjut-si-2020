@@ -15,7 +15,7 @@
 		</thead>
 		<tbody>
 		<?php $no = 1; ?>
-		<?php foreach ($data_mahasiswa as $isi) { ?>
+		<?php foreach ($mahasiswa as $isi) { ?>
 			<tr>
 				<td class="text-center"><?= $no++ ?></td>
 				<td><?= $isi->nim ?></td>
@@ -23,12 +23,16 @@
 				<td><?= $isi->alamat ?></td>
 				<td class="text-center">
 
-					<a href="<?= site_url('mahasiswa/hapus/' . $isi->nim) ?>"
-					   onclick="return confirm('Anda Yakin ?')"
-					   class="btn btn-danger btn-sm">Del</a>
+					<?php if ($this->session->userdata('hak_pengguna') == 'admin') { ?>
 
-					<a href="<?= site_url('mahasiswa/edit/' . $isi->nim) ?>"
-					   class="btn btn-info btn-sm">Edit</a>
+						<a href="<?= site_url('mahasiswa/hapus/' . $isi->nim) ?>"
+						   onclick="return confirm('Anda Yakin ?')"
+						   class="btn btn-danger btn-sm">Del</a>
+
+						<a href="<?= site_url('mahasiswa/edit/' . $isi->nim) ?>"
+						   class="btn btn-info btn-sm">Edit</a>
+
+					<?php } ?>
 
 				</td>
 			</tr>

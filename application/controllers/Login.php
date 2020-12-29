@@ -26,8 +26,14 @@ class Login extends CI_Controller
 			$this->session->set_userdata($data_session);
 			redirect('mahasiswa/index');
 		} else {
-			$this->session->set_flashdata('pesan', 'Maaf, Username atau Sandi anda salah');
+			$this->session->set_flashdata('pesan', 'Maaf, Username atau Sandi salah');
 			redirect('login/index');
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('Login/index');
 	}
 }

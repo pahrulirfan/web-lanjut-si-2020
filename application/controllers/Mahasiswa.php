@@ -6,6 +6,10 @@ class Mahasiswa extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('m_mahasiswa');
+
+		if (!$this->session->userdata('nama_pengguna')){
+			redirect('login/index');
+		}
 	}
 
 	public function index($url_nim = '', $url_jur = '')
@@ -16,7 +20,7 @@ class Mahasiswa extends CI_Controller
 //		$data['jurusan'] = $url_jur;
 //		$data['tbl_mahasiswa'] = $this->db->get('mahasiswa')->result();
 
-		$data['data_mahasiswa'] = $this->m_mahasiswa->getAll();
+		$data['data'] = $this->m_mahasiswa->getAll();
 
 		$this->load->view('template/header');
 		$this->load->view('mahasiswa/v_index', $data);
